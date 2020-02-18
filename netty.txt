@@ -1,0 +1,8 @@
+protobuf
+    1. 编译 protoc --java_out=src/main/java src/protobuf/Student.proto
+            protoc --java_out=src/main/java src/protobuf/Person.proto
+            protoc --java_out=src/main/java src/protobuf/Person1.proto
+
+    https://github.com/protocolbuffers/protobuf/releases/tag/v3.11.0
+
+thrift

@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'com.sinoyang'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // https://mvnrepository.com/artifact/io.netty/netty-all
+    compile group: 'io.netty', name: 'netty-all', version: '4.1.10.Final'
+
+    // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
+    compile group: 'com.google.protobuf', name: 'protobuf-java', version: '3.11.0'
+
+    // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util
+    compile group: 'com.google.protobuf', name: 'protobuf-java-util', version: '3.11.0'
+
+    // https://mvnrepository.com/artifact/org.apache.thrift/libthrift
+    compile group: 'org.apache.thrift', name: 'libthrift', version: '0.13.0'
+
+    // https://mvnrepository.com/artifact/io.grpc/grpc-core
+    compile group: 'io.grpc', name: 'grpc-core', version: '1.27.1'
+
+}

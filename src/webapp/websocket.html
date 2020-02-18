@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>WebSocket客户端 com.sinoyang.netty.lession5.MyServer</title>
+        <script type="text/javascript">
+            var socket;
+            window.onload = function() {
+                if(window.WebSocket) {
+                    socket = new WebSocket("ws://localhost:8899/ws");
+                    var ta = document.getElementById("response");
+                    // 获取数据
+                    socket.onmessage = function(event) {
+                        ta.value = ta.value + "\n" + event.data;
+                    }
+                    // 打开链接的时候
+                    socket.onopen = function(event) {
+                        ta.value = "链接开启！";
+                    }
+                    // 链接断掉
+                    socket.onclose = function(event) {
+                        ta.value = ta.value + "链接断开！";
+                    }
+                } else {
+                    alert("浏览器不支持WebSocket!");
+                }
+            }
+
+            function send(message) {
+                if(!window.WebSocket) {
+                    return;
+                }
+
+                if(socket.readyState == WebSocket.OPEN) {
+                    socket.send(message);
+                } else {
+                    alert("链接未开启！");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form action="#">
+            <textarea id="message" name="message" style="width: 400px;height: 200px;"></textarea>
+            <br/>
+            <input type="button" onclick="send(this.form.message.value)" value="发送数据" />
+            <h3>服务器响应：</h3>
+            <textarea id="response" name="response" style="width: 400px;height: 200px;"></textarea>
+        </form>
+    </body>
+</html>
