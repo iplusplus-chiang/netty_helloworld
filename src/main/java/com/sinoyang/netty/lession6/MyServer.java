@@ -11,6 +11,8 @@ import io.netty.handler.logging.LoggingHandler;
 import java.net.InetSocketAddress;
 
 /**
+ * idea 跟 GIT集成
+ * 
  * google protobuf
  */
 public class MyServer {
@@ -21,6 +23,7 @@ public class MyServer {
         EventLoopGroup bossGroup = new NioEventLoopGroup(); // 类似于死循环
         // 具体的处理。
         EventLoopGroup workerGroup = new NioEventLoopGroup();
+
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             // NioSctpServerChannel NioServerSocketChannel
